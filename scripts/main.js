@@ -8,11 +8,15 @@ var BetitChalengeApp = angular.module('BetitChalengeApp', ['ngMaterial','ngMessa
  *	Config, define Angular Material Theming
  *
  */
-BetitChalengeApp.config( ['$mdThemingProvider',function($mdThemingProvider){
-	$mdThemingProvider
-		.theme('default')
-		.primaryPalette('blue');
-}]);
+BetitChalengeApp.config( ['$mdThemingProvider','$mdAriaProvider',
+	function($mdThemingProvider,$mdAriaProvider){
+		$mdThemingProvider
+			.theme('default')
+			.primaryPalette('blue');
+
+		$mdAriaProvider.disableWarnings();
+	}
+]);
 
 /*
  *	Main controller, it controls main view.

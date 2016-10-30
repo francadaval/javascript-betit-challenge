@@ -12,7 +12,7 @@ BetitChalengeApp.service('contactsService',['localStorageService','utils',
 		 * with localStorageService.
 		 */
 		const CONTACT_LIST_KEY = 'contactsList';
-		var contacts;
+		var contacts = {};
 
 		/**
 		 * Add a new contact to the list.
@@ -60,14 +60,13 @@ BetitChalengeApp.service('contactsService',['localStorageService','utils',
 		this.readContactsList = function() {
 			return storage.read(CONTACT_LIST_KEY).then( function(list){
 				if( list != null )
-					contacts = list;
-				else
-					contacts = {};
+					angular.merge(contacts,list);
 
 				return contacts;
 			}, function(){
-				contacts = {};
-				return storage.save( CONTACT_LIST_KEY, contacts );
+				return storage.save( CONTACT_LIST_KEY, contacts ).then(function(){
+					return contacts;
+				});
 			});
 		}
 	}

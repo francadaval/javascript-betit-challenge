@@ -14,7 +14,7 @@ BetitChalengeApp.directive('bcaContactsList',function(){
 BetitChalengeApp.controller('ContactsListController',['$scope', function($scope) {
 
 	$scope.isEmptyList = function() {
-		return Object.keys($scope.contacts).length == 0;
+		return !$scope.contacts || Object.keys($scope.contacts).length == 0;
 	}
 
 }]);
