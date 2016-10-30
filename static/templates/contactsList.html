@@ -1,0 +1,21 @@
+<md-content flex layout-padding>
+	<h1 ng-show="isEmptyList()" class="md-display-2">
+		Contacts list is empty.
+	</h1>
+	<md-list flex>
+	 	<md-list-item class="md-2-line" ng-repeat="contact in contacts" >
+	 		<md-icon class="bca" md-svg-src="/images/account_box.svg" ></md-icon>
+	 		<div class="md-list-item-text" layout="column">
+				<h3>{{contact.firstName}} {{contact.lastName}}</h3>
+				<h4>{{contact.email}} ({{contact.country|country}})</h4>
+        	</div>
+    		<md-button class="md-primary md-fab bca" ng-click="editContactView(contact)">
+  				 <md-icon md-svg-src="/images/edit.svg"></md-icon>
+			</md-button>   	
+	 	</md-list-item>
+	 </md-list>
+	 <md-divider ></md-divider>
+	 <md-button class="md-primary md-raised" ng-click="newContactView()">
+  		<md-icon md-svg-src="/images/add.svg"></md-icon> New Contact
+	</md-button>
+</md-content>

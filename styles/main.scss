@@ -1,0 +1,27 @@
+bca-contact-form, bca-contacts-list
+{
+	md-content
+	{
+		max-width: 600px;
+		margin: 0 auto;
+	}
+}
+
+bca-contacts-list
+{
+	md-list-item
+	{
+		button.md-button.md-fab.bca
+		{
+		    height: 36px;
+		    width: 36px;
+		    padding: 0px;
+		    margin-top: 16px;
+
+		    md-icon
+		    {
+		    	height: 24px;
+		    }
+		}
+	}
+}

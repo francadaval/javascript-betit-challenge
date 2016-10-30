@@ -1,0 +1,59 @@
+<md-content flex layout-padding>
+ 	<form novalidate name="contactForm">
+        <div layout="row" layout-margin >
+            <md-input-container flex="45">
+                <label>First name</label>
+                <input name="firstName" ng-model="form_contact.firstName" required md-no-asterisk>
+                <div ng-messages="contactForm.firstName.$error">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+         	<md-input-container flex="45">
+                <label>Last name</label>
+                <input name="lastName" ng-model="form_contact.lastName" required md-no-asterisk>
+                <div ng-messages="contactForm.lastName.$error">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+        </div>
+        <div layout="row" layout-margin >
+         	<md-input-container flex="45">
+                <label>Email</label>
+                <input name="email" ng-model="form_contact.email" required md-no-asterisk 	ng-pattern="/^.+@.+\..+$/" >
+                <div ng-messages="contactForm.email.$error" ng-if="contactForm.email.$dirty || contactForm.email.$touched" md-auto-hide="false">
+                    <div ng-message="pattern">This must look like a valid email.</div>
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+         	<md-input-container flex="45">
+                <label>Country</label>
+                <md-select name="country" ng-model="form_contact.country" required md-no-asterisk md-on-open="loadCountries()" >
+                    <md-option ng-value="country.code" ng-repeat="country in countriesList">
+                        {{country.name}}
+                    </md-option>
+                </md-select>
+                <div ng-messages="contactForm.email.$error" ng-if="contactForm.email.$dirty || contactForm.email.$touched" md-auto-hide="false">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+        </div>
+
+    	<md-divider ></md-divider>
+        
+        <md-button type="submit" ng-show="editing" class="md-primary md-raised" ng-click="update()">
+            <md-icon md-svg-src="/images/update.svg"></md-icon> Update
+        </md-button>
+        
+        <md-button ng-show="editing" class="md-primary md-raised" ng-click="remove()">
+            <md-icon md-svg-src="/images/delete.svg"></md-icon> Remove
+        </md-button>
+        
+        <md-button type="submit" ng-show="!editing" class="md-primary md-raised" ng-click="add()">
+            <md-icon md-svg-src="/images/update.svg"></md-icon> Save
+        </md-button>
+    	
+        <md-button class="md-warn md-raised" ng-click="cancel()">
+      		Cancel
+    	</md-button>
+    </form>
+</md-content>

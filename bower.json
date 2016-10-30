@@ -1,0 +1,18 @@
+{
+  "name": "betit_chalenge",
+  "description": "Betit Chalenge, JS Developer",
+  "main": "",
+  "license": "",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "static/scripts",
+    "static/styles"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.5.8",
+    "angular-material": "^1.1.1"
+  }
+}

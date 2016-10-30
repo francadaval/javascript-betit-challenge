@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="BetitChalengeApp" ng-strict-di >
+<head>
+	<title>Betit Chalenge</title>
+	<link type="text/css" rel="stylesheet" media=all href="/styles/ext/angular-material.css" />
+	<link type="text/css" rel="stylesheet" media=all href="/styles/main.css" />
+</head>
+<body ng-controller="MainController">
+
+	<md-toolbar class="md-primary">
+		<div class="md-toolbar-tools">
+			<h1>Betit Chalenge - {{view.title}}</h1>
+		</div>
+	</md-toolbar>
+
+	<bca-view></bca-view>
+
+	<script src="/scripts/ext/angular.js"></script>
+	<script src="/scripts/ext/angular-animate.js"></script>
+	<script src="/scripts/ext/angular-aria.js"></script>
+	<script src="/scripts/ext/angular-messages.js"></script>
+	<script src="/scripts/ext/angular-material.js"></script>
+
+	<script src="/scripts/betit-chalenge.js"></script>
+</body>
+</html>
