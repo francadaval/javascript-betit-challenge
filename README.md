@@ -1,4 +1,4 @@
-# The Javascript Betit Challenge Solution by Fran Cadaval
+# The Javascript Challenge Solution by Fran Cadaval
 
 ## Client Side Address Book
 Build a [Single Page Application](https://en.wikipedia.org/wiki/Single-page_application) (SPA) address book using JavaScript, HTML and CSS.
